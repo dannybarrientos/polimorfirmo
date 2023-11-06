@@ -1,4 +1,5 @@
 import { PlainStringifier } from './numberStringifier/plainStringifier.js'
+import { FizzBuzzStringifier } from './numberStringifier/fizzBuzzStringifier.js'
 
 /**
  * Clase que implementa FizzBuzz
@@ -18,9 +19,10 @@ export class FizzBuzz {
    * @returns {string} el numero como string segun las reglas de conversion
    */
   convert (aNumber) {
+    const fizzBuzzStringifier = new FizzBuzzStringifier()
     const plainStringifier = new PlainStringifier()
-    if (aNumber % 15 === 0) {
-      return 'FizzBuzz'
+    if (fizzBuzzStringifier.canConvert(aNumber)) {
+      return fizzBuzzStringifier.stringify(aNumber)
     } else if (aNumber % 3 === 0) {
       return 'Fizz'
     } else if (aNumber % 5 === 0) {
