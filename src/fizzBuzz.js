@@ -31,7 +31,11 @@ export class FizzBuzz {
    * @returns {string} el numero como string segun las reglas de conversion
    */
   convert (aNumber) {
-    const stringifier = this.stringifiers.find(stringifier => stringifier.canConvert(aNumber))
+    const stringifier = this.selectStringifierFor(aNumber)
     return stringifier.stringify(aNumber)
+  }
+
+  selectStringifierFor (aNumber) {
+    return this.stringifiers.find(stringifier => stringifier.canConvert(aNumber))
   }
 }
