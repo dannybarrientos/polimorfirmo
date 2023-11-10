@@ -1,5 +1,6 @@
 import { PlainStringifier } from './numberStringifier/plainStringifier.js'
 import { FizzBuzzStringifier } from './numberStringifier/fizzBuzzStringifier.js'
+import { FizzStringifier } from './numberStringifier/fizzStringifier.js'
 
 /**
  * Clase que implementa FizzBuzz
@@ -20,11 +21,12 @@ export class FizzBuzz {
    */
   convert (aNumber) {
     const fizzBuzzStringifier = new FizzBuzzStringifier()
+    const fizzStringifier = new FizzStringifier()
     const plainStringifier = new PlainStringifier()
     if (fizzBuzzStringifier.canConvert(aNumber)) {
       return fizzBuzzStringifier.stringify(aNumber)
-    } else if (aNumber % 3 === 0) {
-      return 'Fizz'
+    } else if (fizzStringifier.canConvert(aNumber)) {
+      return fizzStringifier.stringify(aNumber)
     } else if (aNumber % 5 === 0) {
       return 'Buzz'
     } else if (plainStringifier.canConvert(aNumber)) {
