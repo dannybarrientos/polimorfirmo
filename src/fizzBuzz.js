@@ -21,18 +21,13 @@ export class FizzBuzz {
    * @returns {string} el numero como string segun las reglas de conversion
    */
   convert (aNumber) {
-    const fizzBuzzStringifier = new FizzBuzzStringifier()
-    const fizzStringifier = new FizzStringifier()
-    const buzzStringifier = new BuzzStringifier()
-    const plainStringifier = new PlainStringifier()
-    if (fizzBuzzStringifier.canConvert(aNumber)) {
-      return fizzBuzzStringifier.stringify(aNumber)
-    } else if (fizzStringifier.canConvert(aNumber)) {
-      return fizzStringifier.stringify(aNumber)
-    } else if (buzzStringifier.canConvert(aNumber)) {
-      return buzzStringifier.stringify(aNumber)
-    } else if (plainStringifier.canConvert(aNumber)) {
-      return plainStringifier.stringify(aNumber)
-    }
+    const stringifiers = [
+      new FizzBuzzStringifier(),
+      new FizzStringifier(),
+      new BuzzStringifier(),
+      new PlainStringifier()
+    ]
+    const stringifier = stringifiers.find(stringifier => stringifier.canConvert(aNumber))
+    return stringifier.stringify(aNumber)
   }
 }
