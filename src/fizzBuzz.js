@@ -15,19 +15,23 @@ import { BuzzStringifier } from './numberStringifier/buzzStringifier.js'
  * - El número como string en cualquier otro caso
  */
 export class FizzBuzz {
+
+  constructor () {
+    this.stringifiers = [
+      new FizzBuzzStringifier(),
+      new FizzStringifier(),
+      new BuzzStringifier(),
+      new PlainStringifier()
+    ]
+  }
+
   /**
    * Convierte un número a string siguiendo las reglas
    * @param {number} aNumber el numero a convertir
    * @returns {string} el numero como string segun las reglas de conversion
    */
   convert (aNumber) {
-    const stringifiers = [
-      new FizzBuzzStringifier(),
-      new FizzStringifier(),
-      new BuzzStringifier(),
-      new PlainStringifier()
-    ]
-    const stringifier = stringifiers.find(stringifier => stringifier.canConvert(aNumber))
+    const stringifier = this.stringifiers.find(stringifier => stringifier.canConvert(aNumber))
     return stringifier.stringify(aNumber)
   }
 }
