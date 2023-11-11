@@ -1,9 +1,9 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
-import { FizzBuzzWhizz } from '../src/fizzBuzzWhizz.js'
+import { NumberToWordGame } from '../src/NumberToWordGame.js'
 
 describe('FizzBuzzWhizz', () => {
-  const sut = new FizzBuzzWhizz();
+  const sut = NumberToWordGame.FizzBuzzWhizz();
 
   [1, 2, 97].forEach((testCase) =>
     test(`for ${testCase} return ${testCase}`, () => {
@@ -41,7 +41,7 @@ describe('FizzBuzzWhizz', () => {
 
   [21].forEach((testCase) => {
     test(`for ${testCase} return FizzWhizz`, () => {
-    // This test passes because it does not throw an exception.
+      // This test passes because it does not throw an exception.
       assert.strictEqual(sut.convert(testCase), 'FizzWhizz')
     })
   });

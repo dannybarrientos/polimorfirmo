@@ -1,9 +1,9 @@
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
-import { FizzBuzz } from '../src/fizzBuzz.js'
+import { NumberToWordGame } from '../src/NumberToWordGame.js'
 
 describe('FizzBuzz', () => {
-  const sut = new FizzBuzz();
+  const sut = NumberToWordGame.FizzBuzz();
 
   [1, 2, 98].forEach((testCase) =>
     test(`for ${testCase} return '${testCase}'`, () => {
