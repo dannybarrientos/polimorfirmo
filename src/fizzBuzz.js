@@ -1,7 +1,7 @@
 import { PlainStringifier } from './numberStringifier/plainStringifier.js'
-import { FizzBuzzStringifier } from './numberStringifier/fizzBuzzStringifier.js'
 import { FizzStringifier } from './numberStringifier/fizzStringifier.js'
 import { BuzzStringifier } from './numberStringifier/buzzStringifier.js'
+import { CompositeStringifier } from './numberStringifier/compositeStringifier.js'
 
 /**
  * Clase que implementa FizzBuzz
@@ -17,10 +17,13 @@ import { BuzzStringifier } from './numberStringifier/buzzStringifier.js'
 export class FizzBuzz {
 
   constructor () {
-    this.stringifiers = [
-      new FizzBuzzStringifier(),
+    const composableStringifiers = [
       new FizzStringifier(),
-      new BuzzStringifier(),
+      new BuzzStringifier()]
+
+    this.stringifiers = [
+      new CompositeStringifier(composableStringifiers),
+      ...composableStringifiers,
       new PlainStringifier()
     ]
   }

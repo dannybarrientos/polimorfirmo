@@ -12,8 +12,11 @@ import { CompositeStringifier } from './numberStringifier/compositeStringifier.j
  * al siguiente algoritmo:
  * - Fizz si el número es divisible por 3
  * - Buzz si el número es divisible por 5
- * - FizzBuzz si es divisible por 3 y 5
  * - Whizz si el número es divisible por 7
+ * - FizzBuzz si es divisible por 3 y 5
+ * - FizzWhiz si es divisible por 3 y 7
+ * - BuzzWhizz si es divisible por 5 y 7
+ * - FizzBuzzWhizz si es divisible por 3, 5 y 7
  * - El número como string en cualquier otro caso
  */
 export class FizzBuzzWhizz {
