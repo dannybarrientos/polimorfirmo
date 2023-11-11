@@ -37,5 +37,26 @@ describe('FizzBuzzWhizz', () => {
       // This test passes because it does not throw an exception.
       assert.strictEqual(sut.convert(testCase), 'Whizz')
     })
+  });
+
+  [21].forEach((testCase) => {
+    test(`for ${testCase} return FizzWhizz`, () => {
+    // This test passes because it does not throw an exception.
+      assert.strictEqual(sut.convert(testCase), 'FizzWhizz')
+    })
+  });
+
+  [35].forEach((testCase) => {
+    test(`for ${testCase} return BuzzWhizz`, () => {
+    // This test passes because it does not throw an exception.
+      assert.strictEqual(sut.convert(testCase), 'BuzzWhizz')
+    })
+  });
+
+  [105].forEach((testCase) => {
+    test(`for ${testCase} return FizzBuzzWhizz`, () => {
+    // This test passes because it does not throw an exception.
+      assert.strictEqual(sut.convert(testCase), 'FizzBuzzWhizz')
+    })
   })
 })
