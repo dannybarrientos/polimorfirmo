@@ -1,0 +1,3 @@
+{
+  "composableStringifiers": ["FizzStringifier", "WhizzStringifier"]
+}
