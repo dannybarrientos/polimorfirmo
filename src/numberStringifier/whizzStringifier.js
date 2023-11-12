@@ -9,3 +9,5 @@ export class WhizzStringifier extends NumberStringifier {
     return 'Whizz'
   }
 }
+
+NumberStringifier.SUBCLASSES.push(WhizzStringifier)

@@ -1,3 +1,4 @@
+import { NumberStringifier } from './numberStringifier.js'
 
 /**
  * Clase que convierte los números en Fizz
@@ -12,3 +13,5 @@ export class FizzStringifier {
     return 'Fizz'
   }
 }
+
+NumberStringifier.SUBCLASSES.push(FizzStringifier)

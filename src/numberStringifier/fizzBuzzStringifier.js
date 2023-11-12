@@ -13,3 +13,5 @@ export class FizzBuzzStringifier extends NumberStringifier {
     return 'FizzBuzz'
   }
 }
+
+NumberStringifier.SUBCLASSES.push(FizzBuzzStringifier)

@@ -27,3 +27,5 @@ export class CompositeStringifier extends NumberStringifier {
     return this.stringifiersThatCanConvert(aNumber).map(stringifier => stringifier.stringify(aNumber)).join('')
   }
 }
+
+NumberStringifier.SUBCLASSES.push(CompositeStringifier)

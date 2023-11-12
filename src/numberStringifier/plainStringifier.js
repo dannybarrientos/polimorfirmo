@@ -12,3 +12,5 @@ export class PlainStringifier extends NumberStringifier {
     return aNumber.toString()
   }
 }
+
+NumberStringifier.SUBCLASSES.push(PlainStringifier)

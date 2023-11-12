@@ -5,6 +5,11 @@
 export class NumberStringifier {
   static MUST_IMPLEMENTED_BY_SUBCLASS_ERROR_MESSAGE = 'Must be implemented by subclass'
 
+  static SUBCLASSES = []
+  static getClassesByName (strinfigierName) {
+    return NumberStringifier.SUBCLASSES.find(subclass => subclass.name === strinfigierName)
+  }
+
   /**
    * Chequea si la instancia puede
    * convertir el número a string
